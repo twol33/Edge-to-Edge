@@ -18,6 +18,9 @@ function UserPage() {
     history.push('/weather')
   }
 
+  const goToFriends = () => {
+    history.push('/friend')
+  }
 
   return (
     <div className="container">
@@ -33,7 +36,7 @@ function UserPage() {
       </div>
 
       <div>
-        <button>Friends</button>
+        <button onClick = {goToFriends}>Friends</button>
       </div>
 
       <div>

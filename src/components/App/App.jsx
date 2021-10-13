@@ -20,9 +20,12 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import BioPage from '../BioPage/BioPage';
+import WeatherPage from '../WeatherPage/WeatherPage';
+import FriendPage from '../FriendPage/FriendPage';
 
 import './App.css';
-import WeatherPage from '../WeatherPage/WeatherPage';
+
+
 
 function App() {
   const dispatch = useDispatch();
@@ -70,11 +73,11 @@ function App() {
             <WeatherPage />
           </ProtectedRoute>
 
+          <ProtectedRoute exact path="/friend">
+            <FriendPage />
+          </ProtectedRoute>
+
           
-
-
-
-
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
