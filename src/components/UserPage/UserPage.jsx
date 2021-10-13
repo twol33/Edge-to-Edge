@@ -14,6 +14,9 @@ function UserPage() {
     history.push('/bio')
   }
 
+  const goToWeather = () => {
+    history.push('/weather')
+  }
 
 
   return (
@@ -34,7 +37,7 @@ function UserPage() {
       </div>
 
       <div>
-        <button>Weather</button>
+        <button onClick = {goToWeather}>Weather</button>
       </div>
 
       <div>

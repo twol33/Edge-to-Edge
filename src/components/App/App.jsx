@@ -22,6 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import BioPage from '../BioPage/BioPage';
 
 import './App.css';
+import WeatherPage from '../WeatherPage/WeatherPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -64,6 +65,12 @@ function App() {
           <ProtectedRoute exact path="/bio">
             <BioPage />
           </ProtectedRoute>
+
+          <ProtectedRoute exact path="/weather">
+            <WeatherPage />
+          </ProtectedRoute>
+
+          
 
 
 
