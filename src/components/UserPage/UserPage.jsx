@@ -9,7 +9,34 @@ function UserPage() {
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
       <p>Your ID is: {user.id}</p>
-      <LogOutButton className="btn" />
+      
+      <div>
+        <button>Status</button>
+      </div>
+      
+      <div>
+        <button>Bio</button>
+      </div>
+
+      <div>
+        <button>Friends</button>
+      </div>
+
+      <div>
+        <button>Weather</button>
+      </div>
+
+      <div>
+        <button>Park</button>
+        <button>Free Ride</button>
+        <button>All Mountain</button>
+        <button>Back Country</button>
+      </div>
+
+      <div>
+        <LogOutButton className="btn" />
+      </div>
+
     </div>
   );
 }
