@@ -3,13 +3,27 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 function BioPage(){
+    const history = useHistory();
+    const dispatch = useDispatch();
+
     const [ first_name, setFirstName ] = useState('');
     const [ last_name, setLastName ] = useState('');
     const [ username, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ image_url, setImageUrl ] = useState('');
-
-    const history = useHistory();
+    
+    const updateBio = (event) => {
+        dispatch({
+            type: 'UPDATE_BIO',
+            payload: {
+                first_name: first_name,
+                last_name: last_name,
+                username: username,
+                password: password,
+                image_url: image_url,
+            },
+        });
+    };
 
     const navBack = () => {
         history.push('/')
