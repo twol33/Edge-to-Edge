@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,7 +15,7 @@ function BioPage(){
     
     const updateBio = (event) => {
         dispatch({
-            type: 'UPDATE_BIO',
+            type: 'SET_BIO',
             payload: {
                 first_name: first_name,
                 last_name: last_name,
@@ -28,6 +29,7 @@ function BioPage(){
     const navBack = () => {
         history.push('/')
     }
+
 
     return(
         <div>
@@ -76,6 +78,7 @@ function BioPage(){
 
                 <button>Save</button>
             </form>
+        
             
         </div>
     )
