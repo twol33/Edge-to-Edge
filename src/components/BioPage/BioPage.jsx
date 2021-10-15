@@ -35,45 +35,45 @@ function BioPage(){
         <div>
             <button onClick = {navBack}>back</button>
             <h1>BIO PAGE</h1>
-            <form>
+            <form onSubmit = { updateBio }>
                 <input 
                     type="text"
                     name="firstname"
                     placeholder="First Name"
-                    value={''}
-                    onChange={(event) => name(params)}
+                    value={first_name}
+                    onChange={(event) => setFirstName( event.target.value )}
                 />
 
                 <input 
                     type="text"
                     name="lastname"
                     placeholder="Last Name"
-                    value={''}
-                    onChange={(event) => name(params)}
+                    value={last_name}
+                    onChange={(event) => setLastName( event.target.value )}
                 />
 
                 <input 
                     type='text'
                     name="username"
                     placeholder="Username"
-                    value={''}
-                    onChange={(event) => name(params)}
+                    value={username}
+                    onChange={(event) => setUsername( event.target.value )}
                 />
 
                 <input 
                     type='text'
                     name="password"
                     placeholder="Password"
-                    value={''}
-                    onChange={(event) => name(params)}
+                    value={password}
+                    onChange={(event) => setPassword( event.target.value )}
                 />
 
                 <input 
                     type='text'
                     name="url_link"
                     placeholder="Image URL"
-                    value={''}
-                    onChange={(event) => name(params)}
+                    value={image_url}
+                    onChange={(event) => setImageUrl( event.target.value )}
                 />
 
                 <button>Save</button>
