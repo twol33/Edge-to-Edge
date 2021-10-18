@@ -24,19 +24,19 @@ function* fetchUser() {
   }
 }
 
-function* updateBio(action) {
-  try{
-    yield axios.post( '/api/user/:id', action.payload )
-    yield put({ type: "SET_BIO" });
-  }catch ( error ) {
-    console.log('error in setting bio information', error);
-    alert("unable to set bio data")
-  }
-}
+// function* updateBio(action) {
+//   try{
+//     yield axios.post( '/api/user/:id', action.payload )
+//     yield put({ type: "SET_BIO" });
+//   }catch ( error ) {
+//     console.log('error in setting bio information', error);
+//     alert("unable to set bio data")
+//   }
+// }
 
 function* userSaga() {
   yield takeLatest( 'FETCH_USER', fetchUser );
-  yield takeLatest( 'SET_BIO', updateBio )
+  // yield takeLatest( 'SET_BIO', updateBio )
 }
 
 export default userSaga;
