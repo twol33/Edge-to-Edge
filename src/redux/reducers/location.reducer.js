@@ -12,3 +12,5 @@ const locationReducer = ( state = blankLocation, action ) => {
             return state;
     }
 }
+
+export default locationReducer; 
