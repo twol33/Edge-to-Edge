@@ -3,10 +3,10 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 
-router.post('/', (req, res) => {
+router.post('/location', (req, res) => {
     let newLocation = req.body;
 
-    let queryText = `INSERT INTO "ride_style" ( "state", "resort" )
+    let queryText = `INSERT INTO "location" ( "state", "resort" )
                      VALUES ( $1, $2 );`;
     pool.query( queryText, [ newLocation.state, newLocation.resort ])
         .then( result => {
