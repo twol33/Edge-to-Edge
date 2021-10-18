@@ -26,7 +26,7 @@ function* fetchUser() {
 
 function* updateBio(action) {
   try{
-    yield axios.post( '/register', action.payload )
+    yield axios.post( '/api/user/:id', action.payload )
     yield put({ type: "SET_BIO" });
   }catch ( error ) {
     console.log('error in setting bio information', error);

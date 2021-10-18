@@ -56,13 +56,35 @@ function UserPage() {
     history.push('/friend')
   }
 
+  const makeRed = () => {
+    $('status_button').css('color', 'red');
+  }
+
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
       <p>Your ID is: {user.id}</p>
+
+      <div>
+        <img/>
+      </div>
       
       <div>
-        <button onClick={toggleStatus}>Status</button>
+        <p>resort location</p>
+      </div>
+
+      <div>
+        <p>ride styles selected</p>
+      </div>
+
+      <div>
+        <p>status identifier img</p>
+      </div>
+
+      
+      
+      <div>
+        <button className='status_button' onClick={toggleStatus, makeRed}>Status</button>
       </div>
       
       <div>

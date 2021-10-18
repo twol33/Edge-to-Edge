@@ -13,6 +13,8 @@ function BioPage(){
     const [ password, setPassword ] = useState('');
     const [ image_url, setImageUrl ] = useState('');
     
+    const user = useSelector( store => store.user )
+
     const updateBio = (event) => {
         dispatch({
             type: 'SET_BIO',
@@ -79,6 +81,8 @@ function BioPage(){
                 <button>Save</button>
             </form>
         
+
+            <p>{user.username} {user.password} {user.first_name} {user.last_name} {user.image_url}</p>
             
         </div>
     )
