@@ -56,9 +56,9 @@ function UserPage() {
     history.push('/friend')
   }
 
-  const makeRed = () => {
-    $('status_button').css('color', 'red');
-  }
+  // const makeRed = () => {
+  //   $('status_button').css('color', 'red');
+  // }
 
   return (
     <div className="container">
@@ -84,7 +84,7 @@ function UserPage() {
       
       
       <div>
-        <button className='status_button' onClick={toggleStatus, makeRed}>Status</button>
+        <button className='status_button' onClick={toggleStatus}>Status</button>
       </div>
       
       <div>
@@ -96,7 +96,7 @@ function UserPage() {
       </div>
 
       <div>
-        <button onClick = {goToWeather}>Weather</button>
+        <button onClick = {goToWeather}>Riding Location</button>
       </div>
 
       <div>

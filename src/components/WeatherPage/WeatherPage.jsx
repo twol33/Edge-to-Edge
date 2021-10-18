@@ -8,7 +8,7 @@ function WeatherPage() {
     return(
         <div>
             <button onClick = {navBack}>back</button>
-            <h1>Weather</h1>
+            <h1>Riding Location</h1>
         </div>
     )
 }
