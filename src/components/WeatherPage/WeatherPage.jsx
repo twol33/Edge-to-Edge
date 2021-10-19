@@ -60,7 +60,10 @@ function WeatherPage() {
                 <button>Save</button>
                     
             </form>
-            
+
+            <table>
+                
+            </table>
             {JSON.stringify(store.locationReducer)}
 
         </div>

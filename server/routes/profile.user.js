@@ -6,7 +6,16 @@ const router = express.Router();
  * GET route template
  */
 router.get('/', (req, res) => {
-  // GET route code here
+  const queryText = `SELECT "user"."username", "status"."on_snow" FROM "user"
+                     JOIN "status"
+                     ON "user"."id" = "status"."id";`
+  pool.query( queryText )
+  .then(( result ) => {
+    res.send( result.rows )
+  }).catch(( error ) => {
+    console.log('error in getting active users information');
+    res.send(500);
+  })
 });
 
 /**

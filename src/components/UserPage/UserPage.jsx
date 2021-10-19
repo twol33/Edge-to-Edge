@@ -23,10 +23,10 @@ function UserPage() {
   }
 
   // button to toggle status
-  const toggleStatus = () => {
-    console.log('clicked status button');
-    setStatus(!toggleSwitch)
-  }
+  // const toggleStatus = () => {
+  //   console.log('clicked status button');
+  //   setStatus(!toggleSwitch)
+  // }
 
   const history = useHistory();
   //these functions will navigate user to appropriate pages
@@ -45,6 +45,12 @@ function UserPage() {
   // const makeRed = () => {
   //   $('status_button').css('color', 'red');
   // }
+
+  // dispatches for ride style buttons
+  
+  const submitParkStyle = event => {
+    dispatch({ type: "SET_PARK", payload: { style: park }})
+  }
 
   return (
     <div className="container">
@@ -72,7 +78,7 @@ function UserPage() {
       
       
       <div>
-        <button className='status_button' onClick={toggleStatus}>Status</button>
+        <button className='status_button' >Status</button>
       </div>
       
       <div>
