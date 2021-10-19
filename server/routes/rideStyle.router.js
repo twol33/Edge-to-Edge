@@ -5,7 +5,9 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/', (req, res) => {
+router.get('/ridestyle', (req, res) => {
+    const queryText = `SELECT * FROM "ride_style" WHERE "id" = $1;`;
+    pool.query( queryText, [ req.params.id ] )
   // GET route code here
 });
 

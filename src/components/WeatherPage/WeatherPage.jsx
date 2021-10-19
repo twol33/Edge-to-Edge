@@ -1,13 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 
 function WeatherPage() {
     const history = useHistory();
     const dispatch = useDispatch();
+    const location = useSelector( store => store.location)
 
     const [ state, setRideState ] = useState('');
     const [ resort, setResort ] = useState('');
+
+    useEffect(() => {
+        fetchUserLocation();
+    }, []);
 
     const updateLocation = () => {
         dispatch({
@@ -18,6 +24,12 @@ function WeatherPage() {
             }
         })
     }
+
+    const fetchUserLocation = () => {
+        dispatch({ 
+            type: 'FETCH_LOCATION',
+        })
+      }
 
     const navBack = () => {
         history.push('/');
@@ -47,6 +59,12 @@ function WeatherPage() {
                 <button>Save</button>
                     
             </form>
+            {JSON.stringify(location)}
+           {/* {location.map((locations) => (
+               <div>
+                   <p>{locations.resort}</p>
+               </div>
+           ))} */}
         </div>
     )
 }

@@ -1,46 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 
 function UserPage() {
-  const [ toggleSwitch, setStatus ] = useState( true );
-  const [ toggleParkStyle, setParkStyle ] = useState( true );
-  const [ toggleFreeRideStyle, setFreeRideStyle ] = useState( true );
-  const [ toggleAllMtnStyle, setAllMtnStyle ] = useState( true );
-  const [ toggleBCStyle, setBCStyle ] = useState( true );
 
   // this component doesn't do much to start, just renders some user reducer info to the DOM
-  const user = useSelector((store) => store.user);
+  const user = useSelector( store => store.user );
+  const resortLocation = useSelector( store  => store.location )
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    fetchUserLocation()
+  }, []);
+
+  console.log(fetchUserLocation);
+
+  const fetchUserLocation = () => {
+    dispatch({ type: 'FETCH_LOCATION'})
+  }
 
   // button to toggle status
   const toggleStatus = () => {
     console.log('clicked status button');
     setStatus(!toggleSwitch)
   }
-
-  // toggle ride style buttons
-  const toggleParkRideStyle = () => {
-    setParkStyle(!toggleParkStyle)
-    console.log('clicked park button');
-  }
-
-  const toggleFreeRideRideStyle = () => {
-    setFreeRideStyle(!toggleFreeRideStyle)
-    console.log('clicked freeride button');
-  }
-  
-  const toggleAllMtnRideStyle = () => {
-    setAllMtnStyle(!toggleAllMtnStyle)
-    console.log('clicked All Mtn button');
-  }
-
-  const toggleBCRideStyle = () => { 
-    setBCStyle(!toggleBCStyle)
-    console.log('clicked Back Country button');
-  }
-    
 
   const history = useHistory();
   //these functions will navigate user to appropriate pages
@@ -70,7 +56,9 @@ function UserPage() {
       </div>
       
       <div>
-        <p>resort location</p>
+        {/* {resortLocation.map((location) => (
+          <p>{location.resort}</p> */}
+        {/* ))} */}
       </div>
 
       <div>
@@ -100,10 +88,10 @@ function UserPage() {
       </div>
 
       <div>
-        <button onClick={toggleParkRideStyle}>Park</button>
-        <button onClick={toggleFreeRideRideStyle}>Free Ride</button>
-        <button onClick={toggleAllMtnRideStyle}>All Mountain</button>
-        <button onClick={toggleBCRideStyle}>Back Country</button>
+        <button>Park</button>
+        <button>Free Ride</button>
+        <button>All Mountain</button>
+        <button>Back Country</button>
       </div>
 
       <div>
