@@ -8,7 +8,8 @@ const router = express.Router();
 router.get('/', (req, res) => {
   const queryText = `SELECT "user"."username", "status"."on_snow" FROM "user"
                      JOIN "status"
-                     ON "user"."id" = "status"."id";`
+                     ON "user"."id" = "status"."id"
+                     WHERE "status"."on_snow" = TRUE;`
   pool.query( queryText )
   .then(( result ) => {
     res.send( result.rows )
