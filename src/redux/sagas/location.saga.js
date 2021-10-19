@@ -17,6 +17,7 @@ function* fetchLocation() {
         console.log('locations', userLocations);
         
         yield put({ type: 'PLACE_LOCATION', payload: userLocations.data })
+        
     } catch ( error ) {
     console.log('error in getting location information', error);
     }

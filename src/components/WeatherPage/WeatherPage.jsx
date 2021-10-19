@@ -62,7 +62,7 @@ function WeatherPage() {
             </form>
 
             <table>
-                
+
             </table>
             {JSON.stringify(store.locationReducer)}
 
