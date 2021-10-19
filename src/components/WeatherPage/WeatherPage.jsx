@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+import useReduxStore from '../../hooks/useReduxStore';
 
 function WeatherPage() {
     const history = useHistory();
     const dispatch = useDispatch();
-    const location = useSelector( store => store.location)
+    const store = useReduxStore();
 
     const [ state, setRideState ] = useState('');
     const [ resort, setResort ] = useState('');
@@ -25,9 +26,9 @@ function WeatherPage() {
         })
     }
 
-    const fetchUserLocation = () => {
+    const fetchUserLocation = (resorts) => {
         dispatch({ 
-            type: 'FETCH_LOCATION',
+            type: 'FETCH_LOCATION', payload: resorts
         })
       }
 
@@ -59,12 +60,9 @@ function WeatherPage() {
                 <button>Save</button>
                     
             </form>
-            {JSON.stringify(location)}
-           {/* {location.map((locations) => (
-               <div>
-                   <p>{locations.resort}</p>
-               </div>
-           ))} */}
+            
+            {JSON.stringify(store.locationReducer)}
+
         </div>
     )
 }
