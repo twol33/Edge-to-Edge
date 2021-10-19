@@ -4,6 +4,7 @@ import loginSaga from './login.saga';
 import profileSaga from './profile.saga';
 import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
+import statusSaga from './rideStyle.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -19,5 +20,6 @@ export default function* rootSaga() {
     userSaga(),
     locationSaga(),
     profileSaga(),
+    statusSaga(),
   ]);
 }
