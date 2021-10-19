@@ -16,6 +16,7 @@ function WeatherPage() {
         fetchUserLocation();
     }, []);
 
+    //  dispatches to the reducers
     const updateLocation = () => {
         dispatch({
             type: 'SET_LOCATION',
@@ -32,6 +33,7 @@ function WeatherPage() {
         })
       }
 
+    //  navigation for buttons 
     const navBack = () => {
         history.push('/');
 

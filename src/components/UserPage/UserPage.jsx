@@ -9,8 +9,8 @@ function UserPage() {
 
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector( store => store.user );
-  const resortLocation = useSelector( store  => store.location )
   const dispatch = useDispatch();
+  const history = useHistory();
   
   useEffect(() => {
     fetchUserLocation()
@@ -22,13 +22,12 @@ function UserPage() {
     dispatch({ type: 'FETCH_LOCATION'})
   }
 
-  // button to toggle status
-  // const toggleStatus = () => {
-  //   console.log('clicked status button');
-  //   setStatus(!toggleSwitch)
-  // }
-
-  const history = useHistory();
+  // destructurinh for buttons
+  const [ park, postPark ] = useState('')
+  const [ freeRide, postFreeRide ] = useState('')
+  const [ allMtn, postAllMtn ] = useState('')
+  const [ backCountry, postBc ] = useState('')
+  
   //these functions will navigate user to appropriate pages
   const goToBio = () => {
     history.push('/bio')
@@ -42,14 +41,22 @@ function UserPage() {
     history.push('/friend')
   }
 
-  // const makeRed = () => {
-  //   $('status_button').css('color', 'red');
-  // }
-
   // dispatches for ride style buttons
   
-  const submitParkStyle = event => {
+  const postPark = (event) => {
     dispatch({ type: "SET_PARK", payload: { style: park }})
+  }
+
+  const postFreeRide = (event) => {
+    dispatch({ type: 'SET_FREERIDE', payload: { style: freeRide}})
+  }
+
+  const postAllMtn = (event) => {
+    dispatch({ type: 'SET_ALLMTN', payload: { style: allMtn}})
+  }
+
+  const postBc = (event) => {
+    dispatch({ type: 'SET_BACKCOUNTRY', payload: { style: backCountry}})
   }
 
   return (
