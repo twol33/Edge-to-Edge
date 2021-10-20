@@ -9,6 +9,7 @@ function UserPage() {
 
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector( store => store.user );
+  
   const dispatch = useDispatch();
   const history = useHistory();
   
@@ -16,17 +17,15 @@ function UserPage() {
     fetchUserLocation()
   }, []);
 
-  console.log(fetchUserLocation);
-
   const fetchUserLocation = () => {
     dispatch({ type: 'FETCH_LOCATION'})
   }
 
   // destructurinh for buttons
-  const [ park, postPark ] = useState('')
-  const [ freeRide, postFreeRide ] = useState('')
-  const [ allMtn, postAllMtn ] = useState('')
-  const [ backCountry, postBc ] = useState('')
+  const [ park, postPark ] = useState('Park')
+  const [ freeRide, postFreeRide ] = useState('Free Ride')
+  const [ allMtn, postAllMtn ] = useState('All Mountain')
+  const [ backCountry, postBc ] = useState('Back Country')
   
   //these functions will navigate user to appropriate pages
   const goToBio = () => {
@@ -41,22 +40,23 @@ function UserPage() {
     history.push('/friend')
   }
 
+
   // dispatches for ride style buttons
   
-  const postPark = (event) => {
+  const submitPark = (event) => {
     dispatch({ type: "SET_PARK", payload: { style: park }})
   }
 
-  const postFreeRide = (event) => {
-    dispatch({ type: 'SET_FREERIDE', payload: { style: freeRide}})
+  const submitFreeRide = (event) => {
+    dispatch({ type: 'SET_FREERIDE', payload: { style: freeRide }})
   }
 
-  const postAllMtn = (event) => {
-    dispatch({ type: 'SET_ALLMTN', payload: { style: allMtn}})
+  const submitAllMtn = (event) => {
+    dispatch({ type: 'SET_ALLMTN', payload: { style: allMtn }})
   }
 
-  const postBc = (event) => {
-    dispatch({ type: 'SET_BACKCOUNTRY', payload: { style: backCountry}})
+  const submitBc = (event) => {
+    dispatch({ type: 'SET_BACKCOUNTRY', payload: { style: backCountry }})
   }
 
   return (
@@ -69,9 +69,7 @@ function UserPage() {
       </div>
       
       <div>
-        {/* {resortLocation.map((location) => (
-          <p>{location.resort}</p> */}
-        {/* ))} */}
+        
       </div>
 
       <div>
@@ -101,10 +99,10 @@ function UserPage() {
       </div>
 
       <div>
-        <button>Park</button>
-        <button>Free Ride</button>
-        <button>All Mountain</button>
-        <button>Back Country</button>
+        <button onClick={submitPark}>Park</button>
+        <button onClick={submitFreeRide}>Free Ride</button>
+        <button onClick={submitAllMtn}>All Mountain</button>
+        <button onClick={submitBc}>Back Country</button>
       </div>
 
       <div>

@@ -11,7 +11,7 @@ function FriendPage() {
 
     useEffect(() => {
         fetchActiveUsers();
-    }, [])
+    }, []);
 
     const fetchActiveUsers = (activeUser) => {
         dispatch({ type: 'FETCH_ACTIVE_USER', payload: activeUser})

@@ -2,27 +2,16 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-/**
- * GET route template
- */
-router.get('/', (req, res) => {
-  // GET route code here
-});
+router.put('/', (req,res) => {
+    let statusChange = req.body
 
-/**
- * POST route template
- */
-router.post('/', (req, res) => {
-    let rideStatus = req.body;
-
-    let queryText = `INSERT INTO "ride_style" ( "style" )
-                     VALUES ( $1 )`;
-    pool.query( queryText, [ rideStatus.style ])
+    let queryText = 'UPDATE "status" SET "on_snow" = NOT "on_snow" WHERE "id" = $1;'
+    pool.query( queryText, [ statusChange ])
     .then( result => {
         res.send(200)
-    }).catch( error => {
+    }).catch ( error => {
         res.send(500)
     })
-});
+})
 
 module.exports = router;
