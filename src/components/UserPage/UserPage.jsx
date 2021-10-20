@@ -59,6 +59,12 @@ function UserPage() {
     dispatch({ type: 'SET_BACKCOUNTRY', payload: { style: backCountry }})
   }
 
+  // dispatch for status button
+
+  const toggleRiderStatus = (event) => {
+    dispatch({ type: 'TOGGLE_RIDER_STATUS '})
+  }
+
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
@@ -83,7 +89,7 @@ function UserPage() {
       
       
       <div>
-        <button className='status_button' >Status</button>
+        <button onClick= {toggleRiderStatus} >Status</button>
       </div>
       
       <div>
