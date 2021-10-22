@@ -21,7 +21,6 @@ function* setFreeRideStyle(action) {
         yield put({ type: 'GET_STATUS' })
     } catch ( error ) {
         console.log('error in setting user ride style');
-        
     }
 }
 

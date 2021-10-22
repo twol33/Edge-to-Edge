@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
+import useReduxStore from '../../hooks/useReduxStore';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -9,6 +10,7 @@ function UserPage() {
 
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector( store => store.user );
+  const store = useReduxStore()
   
   const dispatch = useDispatch();
   const history = useHistory();
@@ -62,7 +64,8 @@ function UserPage() {
   // dispatch for status button
 
   const toggleRiderStatus = (event) => {
-    dispatch({ type: 'TOGGLE_RIDER_STATUS '})
+    dispatch({ type: 'TOGGLE_STATUS', payload: user  })
+    dispatch({ type: 'FETCH_USER' })
   }
 
   return (
@@ -75,7 +78,7 @@ function UserPage() {
       </div>
       
       <div>
-        
+        <p>{`Ride status: ${user.is_on_snow}`}</p>
       </div>
 
       <div>

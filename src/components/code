@@ -1,0 +1,24 @@
+  // destructurinh for buttons
+  const [ park, postPark ] = useState('Park')
+  const [ freeRide, postFreeRide ] = useState('Free Ride')
+  const [ allMtn, postAllMtn ] = useState('All Mountain')
+  const [ backCountry, postBc ] = useState('Back Country')
+  const [ status, postStatus ] = useState()
+
+    // dispatches for ride style buttons
+  
+  const submitPark = (event) => {
+    dispatch({ type: "SET_PARK", payload: { style: park }})
+  }
+
+  const submitFreeRide = (event) => {
+    dispatch({ type: 'SET_FREERIDE', payload: { style: freeRide }})
+  }
+
+  const submitAllMtn = (event) => {
+    dispatch({ type: 'SET_ALLMTN', payload: { style: allMtn }})
+  }
+
+  const submitBc = (event) => {
+    dispatch({ type: 'SET_BACKCOUNTRY', payload: { style: backCountry }})
+  }

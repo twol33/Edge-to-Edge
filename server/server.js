@@ -14,6 +14,7 @@ const profileRouter = require('./routes/profile.user');
 const statusRouter = require('./routes/status.router');
 const styleRouter = require('./routes/rideStyle.router');
 
+
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -31,6 +32,8 @@ app.use('/api/location', locationRouter)
 app.use('/api/profile', profileRouter)
 app.use('/api/status', statusRouter)
 app.use('/api/style', styleRouter)
+
+
 // Serve static files
 app.use(express.static('build'));
 

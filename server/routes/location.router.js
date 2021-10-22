@@ -1,11 +1,12 @@
 const express = require('express');
-const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-router.get('/', rejectUnauthenticated, (req,res) => {
-    const queryText = `SELECT * FROM "location" ;`;
-    pool.query( queryText )
+router.get('/', (req,res) => {
+    let userId = req.user.id;
+
+    const queryText = `SELECT * FROM "location" WHERE "user_id" = $1;`;
+    pool.query( queryText, [ userId ])
     .then(( result ) => { 
         res.send( result.rows )
     }).catch (( error ) => {
@@ -16,10 +17,11 @@ router.get('/', rejectUnauthenticated, (req,res) => {
 
 router.post('/', (req, res) => {
     let newLocation = req.body;
+    let userId = req.user.id;
 
-    let queryText = `INSERT INTO "location" ( "state", "resort" )
-                     VALUES ( $1, $2 );`;
-    pool.query( queryText, [ newLocation.state, newLocation.resort ])
+    let queryText = `INSERT INTO "location" ( "state", "resort", "user_id" )
+                     VALUES ( $1, $2, $3 );`;
+    pool.query( queryText, [ newLocation.state, newLocation.resort, userId ])
         .then( result => {
             res.send(200)
         }).catch( error => {

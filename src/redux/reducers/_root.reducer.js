@@ -4,6 +4,7 @@ import user from './user.reducer';
 import locationReducer from './location.reducer';
 import profileReducer from './profile.reducer';
 import rideStyleReducer from './rideStyle.reducer';
+import statusReducer from './status.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   locationReducer,
   profileReducer,
   rideStyleReducer,
+  statusReducer,
 });
 
 export default rootReducer;
