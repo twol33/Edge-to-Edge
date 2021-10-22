@@ -20,4 +20,17 @@ router.post('/', (req, res) => {
     })
 });
 
+router.get('/', (req,res) => {
+    let userId = req.user.id;
+
+    const queryText = 'SELECT "ride_style"."style" FROM "ride_style" WHERE "user_id" = $1 ORDER BY "id" DESC LIMIT 1;'
+    pool.query( queryText, [ userId ])
+    .then(( result ) => {
+        res.send( result.rows )
+    }).catch(( error ) => {
+        console.log('error getting rider style', error );
+        res.sendStatus(500);
+    })
+})
+
 module.exports = router;
