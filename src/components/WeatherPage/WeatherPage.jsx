@@ -9,6 +9,8 @@ function WeatherPage() {
     const dispatch = useDispatch();
     const store = useReduxStore();
 
+    console.log(store.locationReducer);
+
     const [ state, setRideState ] = useState('');
     const [ resort, setResort ] = useState('');
 
@@ -64,9 +66,21 @@ function WeatherPage() {
             </form>
 
             <table>
-
+                <thead>
+                <tr>
+                    <th>Location</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {store.locationReducer.map((locations) => (
+                        <tr>
+                            <td>{locations.resort}</td>
+                            <td>{locations.date}</td>
+                        </tr>
+                    ))}
+                </tbody>
             </table>
-            {JSON.stringify(store.locationReducer)}
 
         </div>
     )

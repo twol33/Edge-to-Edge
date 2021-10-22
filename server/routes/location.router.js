@@ -5,7 +5,7 @@ const router = express.Router();
 router.get('/', (req,res) => {
     let userId = req.user.id;
 
-    const queryText = `SELECT * FROM "location" WHERE "user_id" = $1;`;
+    const queryText = `SELECT * FROM "location" WHERE "user_id" = $1 ORDER BY "date" DESC;`;
     pool.query( queryText, [ userId ])
     .then(( result ) => { 
         res.send( result.rows )

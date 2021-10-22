@@ -1,5 +1,5 @@
 
-const rideStyleReducer = ( state = {}, action ) => {
+const rideStyleReducer = ( state = { style: '' }, action ) => {
     if( action.type === 'SET_PARK') {
             return {...state, style: 'Park' };
     }else if (action.type === 'SET_FREERIDE') {
@@ -9,7 +9,7 @@ const rideStyleReducer = ( state = {}, action ) => {
     }else if (action.type === 'SET_BACKCOUNTRY') {
             return {...state, style: 'Back Country'};
     }
-        return state;
+    return state;
 }
 
 export default rideStyleReducer;

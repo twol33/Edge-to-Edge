@@ -10,8 +10,12 @@ function UserPage() {
 
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector( store => store.user );
-  const store = useReduxStore()
+  const store = useReduxStore();
+  // const style = useSelector( store => store.rideStyleReducer );
+  // const location = useSelector( store => store.locationReducer )
   
+  console.log(store.rideStyleReducer);
+
   const dispatch = useDispatch();
   const history = useHistory();
   
@@ -23,7 +27,7 @@ function UserPage() {
     dispatch({ type: 'FETCH_LOCATION'})
   }
 
-  // destructurinh for buttons
+  // destructuring for buttons
   const [ park, postPark ] = useState('Park')
   const [ freeRide, postFreeRide ] = useState('Free Ride')
   const [ allMtn, postAllMtn ] = useState('All Mountain')
@@ -78,15 +82,23 @@ function UserPage() {
       </div>
       
       <div>
+        <p>Currently At: {store.locationReducer[0].resort}</p>
+        {/* {store.locationReducer.map((locations) => ( */}
+          {/* <p>Currently At: {locations.resort}</p>
+         ))} */}
+        {/* <p>{`Ride Location: ${store.locationReducer[0].resort}`}</p> */}
+      </div>
+
+      <div>
+
+        {/* {store.rideStyleReducer.map((styles) => (
+          <p>Currently Riding: {styles.style}</p>
+        ))} */}
+        <p>{`Ride Style: ${store.rideStyleReducer.style}`}</p>
+      </div>
+
+      <div>
         <p>{`Ride status: ${user.is_on_snow}`}</p>
-      </div>
-
-      <div>
-        <p>ride styles selected</p>
-      </div>
-
-      <div>
-        <p>status identifier img</p>
       </div>
 
       
