@@ -75,14 +75,16 @@ function UserPage() {
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
-      <p>Your ID is: {user.id}</p>
+      {/* <p>Your ID is: {user.id}</p> */}
 
       <div>
-        <img/>
+        <p><img/></p>
       </div>
       
       <div>
-        <p>Currently At: {store.locationReducer[0].resort}</p>
+        {store.locationReducer && store.locationReducer.length > 0 && (
+         <p>Currently At: {store.locationReducer[0].resort}</p>
+        )}
         {/* {store.locationReducer.map((locations) => ( */}
           {/* <p>Currently At: {locations.resort}</p>
          ))} */}
@@ -98,7 +100,7 @@ function UserPage() {
       </div>
 
       <div>
-        <p>{`Ride status: ${user.is_on_snow}`}</p>
+        <p>{`On Snow: ${user.is_on_snow}`}</p>
       </div>
 
       
@@ -108,11 +110,11 @@ function UserPage() {
       </div>
       
       <div>
-        <button onClick = {goToBio}>Bio</button>
+        <button onClick = {goToBio}>My Info</button>
       </div>
 
       <div>
-        <button onClick = {goToFriends}>Friends</button>
+        <button onClick = {goToFriends}>Active Users</button>
       </div>
 
       <div>
