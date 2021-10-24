@@ -1,5 +1,5 @@
 
-const profileReducer = ( state = {}, action ) => {
+const profileReducer = ( state = [{ profile: '' }], action ) => {
     switch( action.type ) {
         case  'PLACE_ACTIVE_USER':
             return action.payload;
