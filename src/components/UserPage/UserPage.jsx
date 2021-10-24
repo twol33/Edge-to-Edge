@@ -1,3 +1,4 @@
+import './UserPage.css';
 import React, { useEffect, useState } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import useReduxStore from '../../hooks/useReduxStore';
@@ -8,6 +9,18 @@ import { ButtonGroup, Button } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@emotion/react';
 import { lightBlue, green, orange, blueGrey, red, purple } from '@mui/material/colors';
+
+// list material ui imports
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import Divider from '@mui/material/Divider';
+
+import FilterHdrOutlinedIcon from '@mui/icons-material/FilterHdrOutlined';
+import SnowboardingOutlinedIcon from '@mui/icons-material/SnowboardingOutlined';
+import EmojiPeopleOutlinedIcon from '@mui/icons-material/EmojiPeopleOutlined';
 
 function UserPage() {
 
@@ -108,37 +121,77 @@ function UserPage() {
   })
 
   return (
+    <ThemeProvider theme={theme}>
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
       {/* <p>Your ID is: {user.id}</p> */}
 
-      <div>
-        <p><img/></p>
+      <div className='status'>
+        <List
+          sx={{
+            width: '100%',
+            maxWidth: 360,
+            bgcolor: 'background.paper',
+          }}
+
+          className="dashboard"
+        >
+          <ListItem className='location-icon'>
+            <ListItemAvatar className='avatar'>
+              <Avatar className='icon'>
+                <FilterHdrOutlinedIcon color='error'/>
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="Location" secondary={store.locationReducer[0].resort} />
+          </ListItem>
+          {/* <Divider variant="inset" component="li" /> */}
+          <ListItem className='ride-style-icon'>
+            <ListItemAvatar className='avatar'>
+              <Avatar className='icon'>
+                <SnowboardingOutlinedIcon color='success'/>
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary={store.rideStyleReducer.style} secondary="Ride Style" />
+          </ListItem>
+          {/* <Divider variant="inset" component="li" /> */}
+          <ListItem className='status-icon'>
+            <ListItemAvatar className='avatar'>
+              <Avatar className='icon' >
+                <EmojiPeopleOutlinedIcon color='warning'/>
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary={`${user.is_on_snow}`} secondary='Out Snowboarding' />
+          </ListItem>
+        </List>
       </div>
+
+
+      {/* <div>
+        <p><img/></p>
+      </div> */}
       
-      <div>
+      {/* <div>
         {store.locationReducer && store.locationReducer.length > 0 && (
          <p>Currently At: {store.locationReducer[0].resort}</p>
-        )}
+        )} */}
         {/* {store.locationReducer.map((locations) => ( */}
           {/* <p>Currently At: {locations.resort}</p>
          ))} */}
         {/* <p>{`Ride Location: ${store.locationReducer[0].resort}`}</p> */}
-      </div>
+      {/* </div> */}
 
-      <div>
+      {/* <div> */}
 
         {/* {store.rideStyleReducer.map((styles) => (
           <p>Currently Riding: {styles.style}</p>
         ))} */}
-        <p>{`Ride Style: ${store.rideStyleReducer.style}`}</p>
-      </div>
+        {/* <p>{`Ride Style: ${store.rideStyleReducer.style}`}</p> */}
+      {/* </div> */}
 
-      <div>
+      {/* <div>
         <p>{`On Snow: ${user.is_on_snow}`}</p>
-      </div>
+      </div> */}
       
-      <ThemeProvider theme={theme}>
         <div>
           <Button variant='contained' color='warning' onClick= {toggleRiderStatus} >Status</Button>
         </div>
@@ -154,7 +207,6 @@ function UserPage() {
         <div>
           <Button variant='contained' color='error' onClick = {goToWeather}>Riding Location</Button>
         </div>
-      </ThemeProvider>
 
       {/* <ButtonGroup variant="contained" aria-label="outlined primary button group">
         <Button onClick={submitPark}>Park</Button>
@@ -163,14 +215,12 @@ function UserPage() {
         <button onClick={submitBc}>Back Country</button>
       </ButtonGroup> */}
 
-      <ThemeProvider theme={theme}>
         <ButtonGroup size="large" color="success" aria-label="medium secondary button group">
           <Button variant='contained' onClick={submitPark}>Park</Button>
           <Button variant='contained' onClick={submitFreeRide}>Free Ride</Button>
           <Button variant='contained' onClick={submitAllMtn}>All Mountain</Button>
           <Button variant='contained' onClick={submitBc}>Back Country</Button>
         </ButtonGroup>
-      </ThemeProvider>  
 
       {/* <div>
         <button onClick={submitPark}>Park</button>
@@ -184,6 +234,7 @@ function UserPage() {
       </div>
 
     </div>
+    </ThemeProvider>
   );
 }
 
