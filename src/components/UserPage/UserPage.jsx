@@ -4,7 +4,10 @@ import useReduxStore from '../../hooks/useReduxStore';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
+import { ButtonGroup, Button } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@emotion/react';
+import { lightBlue, green, orange, blueGrey, red, purple } from '@mui/material/colors';
 
 function UserPage() {
 
@@ -72,6 +75,38 @@ function UserPage() {
     dispatch({ type: 'FETCH_USER' })
   }
 
+  // color themes for Material ui
+  
+  const newblueGrey = blueGrey['A400']
+  const neworange = orange[800]
+  const newlightBlue = lightBlue[600]
+  const newgreen = green[600];
+  const newred = red['A400'];
+  const newpurple = purple['A400'];
+
+  const theme = createTheme({
+    palette: {
+     primary: {
+        main: newblueGrey,
+      },
+     secondary: {
+        main: newlightBlue,
+      },
+     error: { 
+        main: neworange,
+      },
+     warning: { 
+        main: newgreen
+      },
+     info: { 
+        main: newred 
+      },
+     success: { 
+        main: newpurple
+      },
+    },
+  })
+
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
@@ -102,31 +137,47 @@ function UserPage() {
       <div>
         <p>{`On Snow: ${user.is_on_snow}`}</p>
       </div>
-
       
-      
-      <div>
-        <button onClick= {toggleRiderStatus} >Status</button>
-      </div>
-      
-      <div>
-        <button onClick = {goToBio}>My Info</button>
-      </div>
+      <ThemeProvider theme={theme}>
+        <div>
+          <Button variant='contained' color='warning' onClick= {toggleRiderStatus} >Status</Button>
+        </div>
+        
+        <div>
+          <Button variant='contained' color='primary' onClick = {goToBio}>My Info</Button>
+        </div>
 
-      <div>
-        <button onClick = {goToFriends}>Active Users</button>
-      </div>
+        <div>
+          <Button variant='contained' color='secondary' onClick = {goToFriends}>Active Users</Button>
+        </div>
 
-      <div>
-        <button onClick = {goToWeather}>Riding Location</button>
-      </div>
+        <div>
+          <Button variant='contained' color='error' onClick = {goToWeather}>Riding Location</Button>
+        </div>
+      </ThemeProvider>
 
-      <div>
+      {/* <ButtonGroup variant="contained" aria-label="outlined primary button group">
+        <Button onClick={submitPark}>Park</Button>
+        <button onClick={submitFreeRide}>Free Ride</button>
+        <button onClick={submitAllMtn}>All Mountain</button>
+        <button onClick={submitBc}>Back Country</button>
+      </ButtonGroup> */}
+
+      <ThemeProvider theme={theme}>
+        <ButtonGroup size="large" color="success" aria-label="medium secondary button group">
+          <Button variant='contained' onClick={submitPark}>Park</Button>
+          <Button variant='contained' onClick={submitFreeRide}>Free Ride</Button>
+          <Button variant='contained' onClick={submitAllMtn}>All Mountain</Button>
+          <Button variant='contained' onClick={submitBc}>Back Country</Button>
+        </ButtonGroup>
+      </ThemeProvider>  
+
+      {/* <div>
         <button onClick={submitPark}>Park</button>
         <button onClick={submitFreeRide}>Free Ride</button>
         <button onClick={submitAllMtn}>All Mountain</button>
         <button onClick={submitBc}>Back Country</button>
-      </div>
+      </div> */}
 
       <div>
         <LogOutButton className="btn" />
