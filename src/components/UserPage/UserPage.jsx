@@ -142,7 +142,7 @@ function UserPage() {
                 <FilterHdrOutlinedIcon color='error'/>
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="Location" secondary={store.locationReducer[0].resort} />
+            <ListItemText primary={store.locationReducer[0].resort} secondary="Location" />
           </ListItem>
           {/* <Divider variant="inset" component="li" /> */}
           <ListItem className='ride-style-icon'>
@@ -193,19 +193,19 @@ function UserPage() {
       </div> */}
       
         <div>
-          <Button variant='contained' color='warning' onClick= {toggleRiderStatus} >Status</Button>
-        </div>
-        
-        <div>
-          <Button variant='contained' color='primary' onClick = {goToBio}>My Info</Button>
+          <Button className='status-button' variant='contained' color='warning' onClick= {toggleRiderStatus} >Status</Button>
+        {/* </div>
+
+        <div> */}
+          <Button className='my-info-button' variant='contained' color='primary' onClick = {goToBio}>My Info</Button>
         </div>
 
-        <div>
-          <Button variant='contained' color='secondary' onClick = {goToFriends}>Active Users</Button>
+        <div className='second-row-buttons'>
+          <Button className='users-button' variant='contained' color='secondary' onClick = {goToFriends}>Active Users</Button>
         </div>
 
-        <div>
-          <Button variant='contained' color='error' onClick = {goToWeather}>Riding Location</Button>
+        <div className='third-row-buttons'>
+          <Button className='location-button' variant='contained' color='error' onClick = {goToWeather}>Riding Location</Button>
         </div>
 
       {/* <ButtonGroup variant="contained" aria-label="outlined primary button group">
@@ -215,12 +215,14 @@ function UserPage() {
         <button onClick={submitBc}>Back Country</button>
       </ButtonGroup> */}
 
-        <ButtonGroup size="large" color="success" aria-label="medium secondary button group">
-          <Button variant='contained' onClick={submitPark}>Park</Button>
-          <Button variant='contained' onClick={submitFreeRide}>Free Ride</Button>
-          <Button variant='contained' onClick={submitAllMtn}>All Mountain</Button>
-          <Button variant='contained' onClick={submitBc}>Back Country</Button>
-        </ButtonGroup>
+        <div className='style-buttons'>
+          <ButtonGroup size="large" color="success" aria-label="medium secondary button group">
+            <Button variant='contained' onClick={submitPark}>Park</Button>
+            <Button variant='contained' onClick={submitFreeRide}>Free Ride</Button>
+            <Button variant='contained' onClick={submitAllMtn}>All Mountain</Button>
+            <Button variant='contained' onClick={submitBc}>Back Country</Button>
+          </ButtonGroup>
+        </div>
 
       {/* <div>
         <button onClick={submitPark}>Park</button>
@@ -229,7 +231,7 @@ function UserPage() {
         <button onClick={submitBc}>Back Country</button>
       </div> */}
 
-      <div>
+      <div className='log-out-button'>
         <LogOutButton className="btn" />
       </div>
 

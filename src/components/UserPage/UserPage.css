@@ -7,10 +7,11 @@
 }
 
 .avatar{
-    transform: scale(1.25);
+    transform: scale(1.35);
 }
 
 .icon{
+
 }
 
 .dashboard{
@@ -19,4 +20,38 @@
 
 .status{
     padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.status-button{
+    height: 50px;
+    width: 200px;
+}
+
+.my-info-button{
+    height: 150px;
+    width: 125px;
+    float: right;
+}
+
+.users-button{
+    width: 200px;
+    height: 90px;
+}
+
+.location-button{
+    height: 50px;
+    width: 335px;
+}
+
+.second-row-buttons{
+    padding-top: 10px;
+}
+
+.third-row-buttons{
+    padding-top: 10px;
+}
+
+.style-buttons{
+    
 }
