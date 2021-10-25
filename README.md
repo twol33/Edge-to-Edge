@@ -4,19 +4,7 @@
 
 Duration: Two week build
 
-MN gets snow as part of its four seasons and as there is snow, there are those who enjoy riding on top of it. This application was created to gather people who enjoy going out to their local ski resort, without the hassel of having to coordinate to get individuals together.
-
-Its gets as simple as:
-  1.Signing up/Logging in.
-
-  2.Adding information such as,
-    a. resort you are planning on going to for your day's ride.
-    b. setting your riding style for the day.
-    c. making sure you toggle that you are out skiing/snowboarding.
-
-  3.Strapping up your boots(if you haven't already), and getting out to ride.
-
-Your friends will be able to see your information and status and hopefully it will motivate them to meet you at the slopes.
+MN gets snow as part of its four seasons and as there is snow, there are those who enjoy riding on top of it. This application was created to gather people who enjoy going out to their local ski resort, without the hassel of having to coordinate to get individuals together. Your friends will be able to see your information and status and hopefully it will motivate them to meet you at the slopes.
 
 ## Prerequisites
 - Node.js
@@ -26,16 +14,16 @@ Your friends will be able to see your information and status and hopefully it wi
 - Material UI
 
 ## Built With
-- Express https://expressjs.com/en/starter/installing.html
-- React https://reactjs.org/
-- PostgreSQL https://www.postgresql.org/download/
-- Node https://nodejs.org/en/download/
-- Axios https://axios-http.com/docs/intro
-- Passport http://www.passportjs.org/
-- Material UI https://mui.com/getting-started/usage/
-- HTML https://developer.mozilla.org/en-US/docs/Web/HTML
-- CSS https://developer.mozilla.org/en-US/docs/Web/CSS
-- jQuery https://api.jquery.com/
+- Express 
+- React 
+- PostgreSQL 
+- Node 
+- Axios 
+- Passport 
+- Material UI 
+- HTML 
+- CSS 
+- jQuery 
 
 ## Installation
 
