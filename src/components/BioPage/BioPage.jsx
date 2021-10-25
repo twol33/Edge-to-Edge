@@ -58,7 +58,7 @@ function BioPage(){
         <ThemeProvider theme={bioTheme}>
         <div>
             <Button variant='contained' color='secondary' onClick = {navBack}>Back</Button>
-            <h1>BIO PAGE</h1>
+            <h1 className='bio-header'>BIO PAGE</h1>
             <form className='bio-form' onSubmit = { updateBio }>
                 <input 
                     id="bio-input"

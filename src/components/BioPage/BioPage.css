@@ -1,9 +1,19 @@
+.bio-header{
+    background-color: #78909c;
+    color: white;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 #bio-input{    
     width: 75%;
     height: 60px;
     margin-left: 40px;
     font-size: 25px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 .save-button-div{
