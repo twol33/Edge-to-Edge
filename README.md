@@ -1,121 +1,69 @@
+# EDGE-to-Edge
 
-# EDA Project
-This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
+## Description
 
-We **STRONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
+Duration: Two week build
 
-## Use the Template for This Repository (Don't Clone)
+MN gets snow as part of its four seasons and as there is snow, there are those who enjoy riding on top of it. This application was created to gather people who enjoy going out to their local ski resort, without the hassel of having to coordinate to get individuals together.
 
-- Don't Fork or Clone. Instead, click the `Use this Template` button, and make a copy to your personal account.
+Its gets as simple as:
+  1.Signing up/Logging in.
 
+  2.Adding information such as,
+    a. resort you are planning on going to for your day's ride.
+    b. setting your riding style for the day.
+    c. making sure you toggle that you are out skiing/snowboarding.
+
+  3.Strapping up your boots(if you haven't already), and getting out to ride.
+
+Your friends will be able to see your information and status and hopefully it will motivate them to meet you at the slopes.
 
 ## Prerequisites
+- Node.js
+- React.js
+- Express.js
+- postgresql
+- Material UI
 
-Before you get started, make sure you have the following software installed on your computer:
+## Built With
+- Express https://expressjs.com/en/starter/installing.html
+- React https://reactjs.org/
+- PostgreSQL https://www.postgresql.org/download/
+- Node https://nodejs.org/en/download/
+- Axios https://axios-http.com/docs/intro
+- Passport http://www.passportjs.org/
+- Material UI https://mui.com/getting-started/usage/
+- HTML https://developer.mozilla.org/en-US/docs/Web/HTML
+- CSS https://developer.mozilla.org/en-US/docs/Web/CSS
+- jQuery https://api.jquery.com/
 
-- [Node.js](https://nodejs.org/en/)
-- [PostrgeSQL](https://www.postgresql.org/)
-- [Nodemon](https://nodemon.io/)
+## Installation
 
-## Create database and table
+1. Create a database named 'edge_to_edge'
+2. Information in the database.sql file will create all the neccessary tables to allow for the application to run as intended
+3. Open up your preferred editor 
+4. run an npm install
+5. Run npm run server in your terminal
+6. Run npm run client in your terminal
+7. The npm run client command will open up a new browser for you!
 
-Create a new database called `prime_app` and create a `user` table:
+## Usage
 
-```SQL
-CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL
-);
-```
+1. The user will be able to sign up for an account or login if they've already have an account. 
+2. Once logged in, the user will be sent to the dasboard.
+3. The dashboard will show the user's registered username at the top, a display of their current status, and buttons with assigned functions.
+4. All buttons present:
+  a. STATUS: a button that toggles whether you are out riding.
+  b. ACTIVE Riders: will navigate you to a page where it will show your community of active riders along with their location and ride style. 
+  c. MY INFO: will navigate you to a form where you can update your personal information 
+  d. RIDING LOCATION: will navigate you to a form where you will input your state and the resort you are riding at. Showing on the page will be a history of your resorts you've visited 
+  e. Ride style buttons: with designate your riding style.
+5. Once they user has input all their information, the display on the dashboard will be update. Once the user has toggles their status to true, they will appear in the active riders page with the rest of their community. 
 
-If you would like to name your database something else, you will need to change `prime_app` to the name of your new database name in `server/modules/pool.js`
+## Acknowledgement
 
-## Development Setup Instructions
+Huge thanks to Prime Digital Academy, the Prime Academy Community, my peers, and my family for all their support in making all of this possible.
 
-- Run `npm install`
-- Create a `.env` file at the root of the project and paste this line into the file:
-  ```
-  SERVER_SESSION_SECRET=superDuperSecret
-  ```
-  While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [https://passwordsgenerator.net/](https://passwordsgenerator.net/). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
-- Start postgres if not running already by using `brew services start postgresql`
-- Run `npm run server`
-- Run `npm run client`
-- Navigate to `localhost:3000`
+## Support
 
-## Debugging
-
-To debug, you will need to run the client-side separately from the server. Start the client by running the command `npm run client`. Start the debugging server by selecting the Debug button.
-
-![VSCode Toolbar](documentation/images/vscode-toolbar.png)
-
-Then make sure `Launch Program` is selected from the dropdown, then click the green play arrow.
-
-![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
-
-## Testing Routes with Postman
-
-To use Postman with this repo, you will need to set up requests in Postman to register a user and login a user at a minimum.
-
-Keep in mind that once you using the login route, Postman will manage your session cookie for you just like a browser, ensuring it is sent with each subsequent request. If you delete the `localhost` cookie in Postman, it will effectively log you out.
-
-1. Start the server - `npm run server`
-2. Import the sample routes JSON file [v2](./PostmanPrimeSoloRoutesv2.json) by clicking `Import` in Postman. Select the file.
-3. Click `Collections` and `Send` the following three calls in order:
-   1. `POST /api/user/register` registers a new user, see body to change username/password
-   2. `POST /api/user/login` will login a user, see body to change username/password
-   3. `GET /api/user` will get user information, by default it's not very much
-
-After running the login route above, you can try any other route you've created that requires a logged in user!
-
-## Production Build
-
-Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update.
-
-- Start postgres if not running already by using `brew services start postgresql`
-- Run `npm start`
-- Navigate to `localhost:5000`
-
-## Lay of the Land
-
-There are a few videos linked below that show a walkthrough the client and sever setup to help acclimatize to the boilerplate. Please take some time to watch the videos in order to get a better understanding of what the boilerplate is like.
-
-- [Initial Set](https://vimeo.com/453297271)
-- [Server Walkthrough](https://vimeo.com/453297212)
-- [Client Walkthrough](https://vimeo.com/453297124)
-
-Directory Structure:
-
-- `src/` contains the React application
-- `public/` contains static assets for the client-side
-- `build/` after you build the project, contains the transpiled code from `src/` and `public/` that will be viewed on the production site
-- `server/` contains the Express App
-
-This code is also heavily commented. We recommend reading through the comments, getting a lay of the land, and becoming comfortable with how the code works before you start making too many changes. If you're wondering where to start, consider reading through component file comments in the following order:
-
-- src/components
-  - App/App
-  - Footer/Footer
-  - Nav/Nav
-  - AboutPage/AboutPage
-  - InfoPage/InfoPage
-  - UserPage/UserPage
-  - LoginPage/LoginPage
-  - RegisterPage/RegisterPage
-  - LogOutButton/LogOutButton
-  - ProtectedRoute/ProtectedRoute
-
-## Deployment
-
-1. Create a new Heroku project
-1. Link the Heroku project to the project GitHub Repo
-1. Create an Heroku Postgres database
-1. Connect to the Heroku Postgres database from Postico
-1. Create the necessary tables
-1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
-1. In the deploy section, select manual deploy
-
-## Update Documentation
-
-Customize this ReadMe and the code comments in this project to read less like a starter repo and more like a project. Here is an example: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+Feedback and questions can be directed to tlxiong.prime@outlook.com.

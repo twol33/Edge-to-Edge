@@ -202,7 +202,7 @@ function UserPage() {
         </div>
 
         <div className='second-row-buttons'>
-          <Button style={{fontSize: '17px'}} className='users-button' variant='contained' color='secondary' onClick = {goToFriends}>Active Users</Button>
+          <Button style={{fontSize: '17px'}} className='users-button' variant='contained' color='secondary' onClick = {goToFriends}>Active Riders</Button>
         </div>
 
         <div className='third-row-buttons'>

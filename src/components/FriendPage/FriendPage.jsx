@@ -55,7 +55,7 @@ function FriendPage() {
             <table className='active-user-table'>
                 <thead>
                 <tr>
-                    <th>Active Users</th>
+                    <th>Active Riders</th>
                     <th>State</th>
                     <th>Resort</th>
                     <th>Style</th>

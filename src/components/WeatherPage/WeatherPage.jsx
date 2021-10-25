@@ -86,7 +86,7 @@ function WeatherPage() {
                     onChange={(event) => setResort( event.target.value )}
                 />
 
-                <button className='save-button' variant='contained' color='primary' onClick={updateLocation}>SAVE</button>
+                <button className='save-button' variant='contained' color='primary'>SAVE</button>
                     
             </form>
 
