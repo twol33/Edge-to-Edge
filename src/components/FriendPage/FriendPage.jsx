@@ -5,6 +5,12 @@ import { useDispatch } from 'react-redux';
 import useReduxStore from '../../hooks/useReduxStore';
 import { useEffect } from 'react';
 
+// imports from material ui
+import { createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@emotion/react';
+import { Button } from '@mui/material';
+import { green, red } from '@mui/material/colors';
+
 function FriendPage() {
     const history = useHistory();
     const dispatch = useDispatch();
@@ -25,9 +31,26 @@ function FriendPage() {
     const navBack = () => {
         history.push('/');
     }
+
+    // material ui colors
+    const newgreen = green[600];
+    const newred = red['A200'];
+
+    const friendsTheme = createTheme({
+        palette: {
+            primary:{
+                main: newgreen
+            },
+            secondary:{
+                main: newred
+            },
+        },
+    })
+    
     return(
+        <ThemeProvider theme={friendsTheme}>
         <div>
-            <button onClick = {navBack}>back</button>
+            <Button variant='contained' color='secondary' onClick = {navBack}>back</Button>
             <h1 id='page-header'>Community</h1>
             <table className='active-user-table'>
                 <thead>
@@ -56,6 +79,7 @@ function FriendPage() {
                 </tbody>
             </table>
         </div>
+        </ThemeProvider>
     )
 }
 

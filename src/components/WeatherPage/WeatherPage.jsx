@@ -9,7 +9,7 @@ import useReduxStore from '../../hooks/useReduxStore';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@emotion/react';
 import { Button } from '@mui/material';
-import { green } from '@mui/material/colors';
+import { green, red } from '@mui/material/colors';
 
 function WeatherPage() {
     const history = useHistory();
@@ -47,19 +47,24 @@ function WeatherPage() {
         history.push('/');
     }
 
-    // material ui color themes
+    // material ui colors
     const newgreen = green[600];
+    const newred = red['A200'];
+
     const locationTheme = createTheme({
         palette: {
             primary:{
                 main: newgreen
+            },
+            secondary:{
+                main: newred
             },
         },
     })
     return(
         <ThemeProvider theme={locationTheme}>
         <div>
-            <Button onClick = { navBack }>Back</Button>
+            <Button variant='contained' color='secondary' onClick = { navBack }>Back</Button>
             <h1 id='location-header'>Riding Location</h1>
 
             <form onSubmit = { updateLocation }>
