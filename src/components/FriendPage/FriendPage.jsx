@@ -1,3 +1,4 @@
+import './FriendPage.css'
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -27,8 +28,8 @@ function FriendPage() {
     return(
         <div>
             <button onClick = {navBack}>back</button>
-            <h1>Community</h1>
-            <table>
+            <h1 id='page-header'>Community</h1>
+            <table className='active-user-table'>
                 <thead>
                 <tr>
                     <th>Active Users</th>

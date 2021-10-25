@@ -1,0 +1,33 @@
+.active-user-table{
+    border-collapse: collapse;
+    /* width: 100%; */
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.active-user-table td, .active-user-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.active-user-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.active-user-table tr:hover {background-color: #ddd;}
+
+.active-user-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #29b6f6;
+  color: white;
+}
+
+#page-header{
+    text-align: center;
+    background-color: #1e88e5;
+    color: white;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}

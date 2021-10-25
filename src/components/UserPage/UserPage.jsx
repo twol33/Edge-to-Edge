@@ -123,6 +123,7 @@ function UserPage() {
   return (
     <ThemeProvider theme={theme}>
     <div className="container">
+      
       <h2>Welcome, {user.username}!</h2>
       {/* <p>Your ID is: {user.id}</p> */}
 
@@ -215,8 +216,8 @@ function UserPage() {
         <button onClick={submitBc}>Back Country</button>
       </ButtonGroup> */}
 
-        <div className='style-buttons'>
-          <ButtonGroup size="large" color="success" aria-label="medium secondary button group">
+        <div >
+          <ButtonGroup className='style-buttons' color="success" aria-label="medium secondary button group">
             <Button variant='contained' onClick={submitPark}>Park</Button>
             <Button variant='contained' onClick={submitFreeRide}>Free Ride</Button>
             <Button variant='contained' onClick={submitAllMtn}>All Mountain</Button>

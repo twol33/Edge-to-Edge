@@ -44,6 +44,16 @@
     width: 335px;
 }
 
+.style-buttons{
+    padding-top: 10px;
+    width: 335px;
+}
+
+.log-out-button{
+    padding-top: 10px;
+    float: right;
+}
+
 .second-row-buttons{
     padding-top: 10px;
 }
@@ -52,6 +62,3 @@
     padding-top: 10px;
 }
 
-.style-buttons{
-    
-}
