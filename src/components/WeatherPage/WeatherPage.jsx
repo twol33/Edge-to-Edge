@@ -1,8 +1,15 @@
+import './WeatherPage.css'
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import useReduxStore from '../../hooks/useReduxStore';
+
+// imports from material ui
+import { createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@emotion/react';
+import { Button } from '@mui/material';
+import { green } from '@mui/material/colors';
 
 function WeatherPage() {
     const history = useHistory();
@@ -38,14 +45,26 @@ function WeatherPage() {
     //  navigation for buttons 
     const navBack = () => {
         history.push('/');
-
     }
+
+    // material ui color themes
+    const newgreen = green[600];
+    const locationTheme = createTheme({
+        palette: {
+            primary:{
+                main: newgreen
+            },
+        },
+    })
     return(
+        <ThemeProvider theme={locationTheme}>
         <div>
-            <button onClick = { navBack }>back</button>
-            <h1>Riding Location</h1>
+            <Button onClick = { navBack }>Back</Button>
+            <h1 id='location-header'>Riding Location</h1>
+
             <form onSubmit = { updateLocation }>
                 <input 
+                    id='input-state'
                     type='text'
                     name='state'
                     placeholder='State'
@@ -54,6 +73,7 @@ function WeatherPage() {
                 />
 
                 <input 
+                    id='input-resort'
                     type='text'
                     name='resort'
                     placeholder='Resort Name'
@@ -61,11 +81,11 @@ function WeatherPage() {
                     onChange={(event) => setResort( event.target.value )}
                 />
 
-                <button>Save</button>
+                <Button className='save-button' variant='contained' color='primary'>Save</Button>
                     
             </form>
 
-            <table>
+            <table className='location-table'>
                 <thead>
                 <tr>
                     <th>Location</th>
@@ -83,6 +103,7 @@ function WeatherPage() {
             </table>
 
         </div>
+        </ThemeProvider>
     )
 }
 

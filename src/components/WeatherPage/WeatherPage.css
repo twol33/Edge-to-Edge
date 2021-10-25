@@ -1,0 +1,52 @@
+#location-header{
+        text-align: center;
+        background-color: #ef6c00;
+        color: white;
+        padding: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+}
+
+.location-table{
+    border-collapse: collapse;
+    /* width: 100%; */
+    margin-left: 15px;
+    /* margin-right: 5px; */
+}
+
+.location-table td, .location-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.location-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.location-tabletr:hover {background-color: #ddd;}
+
+.location-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ff9800;
+  color: white;
+}
+
+#input-state{
+    width: 20%;
+    height: 60px;
+    margin-left: 15px;
+    font-size: 25px;
+}
+
+#input-resort{
+    width: 45%;
+    height: 60px;
+    /* padding-right: 10px; */
+    font-size: 25px;
+}
+
+.save-button{
+    height: 55px;
+    width: 35px;
+    align-self: top;
+}

@@ -5,10 +5,6 @@ import useReduxStore from '../../hooks/useReduxStore';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { ButtonGroup, Button } from '@mui/material';
-import { createTheme } from '@mui/material/styles';
-import { ThemeProvider } from '@emotion/react';
-import { lightBlue, green, orange, blueGrey, red, purple } from '@mui/material/colors';
 
 // list material ui imports
 import List from '@mui/material/List';
@@ -16,11 +12,14 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
-import Divider from '@mui/material/Divider';
-
 import FilterHdrOutlinedIcon from '@mui/icons-material/FilterHdrOutlined';
 import SnowboardingOutlinedIcon from '@mui/icons-material/SnowboardingOutlined';
 import EmojiPeopleOutlinedIcon from '@mui/icons-material/EmojiPeopleOutlined';
+import { ButtonGroup, Button } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@emotion/react';
+import { lightBlue, green, orange, blueGrey, red, purple } from '@mui/material/colors';
+
 
 function UserPage() {
 
@@ -123,7 +122,7 @@ function UserPage() {
   return (
     <ThemeProvider theme={theme}>
     <div className="container">
-      
+
       <h2>Welcome, {user.username}!</h2>
       {/* <p>Your ID is: {user.id}</p> */}
 
@@ -143,7 +142,7 @@ function UserPage() {
                 <FilterHdrOutlinedIcon color='error'/>
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary={store.locationReducer[0].resort} secondary="Location" />
+            <ListItemText className='text-size' primary={store.locationReducer[0].resort} secondary="Location" />
           </ListItem>
           {/* <Divider variant="inset" component="li" /> */}
           <ListItem className='ride-style-icon'>
@@ -194,19 +193,19 @@ function UserPage() {
       </div> */}
       
         <div>
-          <Button className='status-button' variant='contained' color='warning' onClick= {toggleRiderStatus} >Status</Button>
+          <Button style={{fontSize: '17px'}} className='status-button' variant='contained' color='warning' onClick= {toggleRiderStatus} >Status</Button>
         {/* </div>
 
         <div> */}
-          <Button className='my-info-button' variant='contained' color='primary' onClick = {goToBio}>My Info</Button>
+          <Button style={{fontSize: '17px'}} className='my-info-button' variant='contained' color='primary' onClick = {goToBio}>My Info</Button>
         </div>
 
         <div className='second-row-buttons'>
-          <Button className='users-button' variant='contained' color='secondary' onClick = {goToFriends}>Active Users</Button>
+          <Button style={{fontSize: '17px'}} className='users-button' variant='contained' color='secondary' onClick = {goToFriends}>Active Users</Button>
         </div>
 
         <div className='third-row-buttons'>
-          <Button className='location-button' variant='contained' color='error' onClick = {goToWeather}>Riding Location</Button>
+          <Button style={{fontSize: '17px'}} className='location-button' variant='contained' color='error' onClick = {goToWeather}>Riding Location</Button>
         </div>
 
       {/* <ButtonGroup variant="contained" aria-label="outlined primary button group">
