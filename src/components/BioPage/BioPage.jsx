@@ -1,7 +1,14 @@
+import './BioPage.css'
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+// import from material ui
+import { createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@emotion/react';
+import { Button } from '@mui/material';
+import { green, red } from '@mui/material/colors';
 
 function BioPage(){
     const history = useHistory();
@@ -32,13 +39,29 @@ function BioPage(){
         history.push('/')
     }
 
+    // material ui colors
+    const newgreen = green[600];
+    const newred = red['A200'];
+
+    const bioTheme = createTheme({
+        palette: {
+            primary:{
+                main: newgreen
+            },
+            secondary:{
+                main: newred
+            },
+        },
+    })
 
     return(
+        <ThemeProvider theme={bioTheme}>
         <div>
-            <button onClick = {navBack}>back</button>
+            <Button variant='contained' color='secondary' onClick = {navBack}>Back</Button>
             <h1>BIO PAGE</h1>
-            <form onSubmit = { updateBio }>
+            <form className='bio-form' onSubmit = { updateBio }>
                 <input 
+                    id="bio-input"
                     type="text"
                     name="firstname"
                     placeholder="First Name"
@@ -47,6 +70,7 @@ function BioPage(){
                 />
 
                 <input 
+                    id="bio-input"
                     type="text"
                     name="lastname"
                     placeholder="Last Name"
@@ -55,6 +79,7 @@ function BioPage(){
                 />
 
                 <input 
+                    id="bio-input"
                     type='text'
                     name="username"
                     placeholder="Username"
@@ -63,6 +88,7 @@ function BioPage(){
                 />
 
                 <input 
+                    id="bio-input"
                     type='text'
                     name="password"
                     placeholder="Password"
@@ -71,20 +97,23 @@ function BioPage(){
                 />
 
                 <input 
+                    id="bio-input"
                     type='text'
                     name="url_link"
                     placeholder="Image URL"
                     value={image_url}
                     onChange={(event) => setImageUrl( event.target.value )}
                 />
-
-                <button>Save</button>
+                <div className='save-button-div'>
+                    <Button className='bio-save-button' variant='contained' color='primary'>Save</Button>
+                </div>
             </form>
         
 
-            <p>{user.username} {user.password} {user.first_name} {user.last_name} {user.image_url}</p>
+            {/* <p>{user.username} {user.password} {user.first_name} {user.last_name} {user.image_url}</p> */}
             
         </div>
+        </ThemeProvider>
     )
 }
 
