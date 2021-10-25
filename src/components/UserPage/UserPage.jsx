@@ -123,7 +123,7 @@ function UserPage() {
     <ThemeProvider theme={theme}>
     <div className="container">
 
-      <h2>Welcome, {user.username}!</h2>
+      <h2 className='dashboard-header'>Welcome, {user.username}</h2>
       {/* <p>Your ID is: {user.id}</p> */}
 
       <div className='status'>
@@ -131,7 +131,8 @@ function UserPage() {
           sx={{
             width: '100%',
             maxWidth: 360,
-            bgcolor: 'background.paper',
+            color: 'white',
+            // bgcolor: 'background.paper',
           }}
 
           className="dashboard"

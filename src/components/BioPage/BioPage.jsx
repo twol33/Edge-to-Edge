@@ -58,7 +58,7 @@ function BioPage(){
         <ThemeProvider theme={bioTheme}>
         <div>
             <Button variant='contained' color='secondary' onClick = {navBack}>Back</Button>
-            <h1 className='bio-header'>BIO PAGE</h1>
+            <h1 className='bio-header'>ACCOUNT</h1>
             <form className='bio-form' onSubmit = { updateBio }>
                 <input 
                     id="bio-input"
@@ -105,7 +105,7 @@ function BioPage(){
                     onChange={(event) => setImageUrl( event.target.value )}
                 />
                 <div className='save-button-div'>
-                    <Button className='bio-save-button' variant='contained' color='primary'>Save</Button>
+                    <Button className='bio-save-button' variant='contained' color='primary'>SAVE</Button>
                 </div>
             </form>
         

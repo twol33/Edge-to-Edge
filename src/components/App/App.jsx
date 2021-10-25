@@ -22,10 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import BioPage from '../BioPage/BioPage';
 import WeatherPage from '../WeatherPage/WeatherPage';
 import FriendPage from '../FriendPage/FriendPage';
-
 import './App.css';
-
-
 
 function App() {
   const dispatch = useDispatch();

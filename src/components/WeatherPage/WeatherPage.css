@@ -31,11 +31,16 @@
   color: white;
 }
 
+.location-table{
+    background-color: white;
+}
+
 #input-state{
     width: 20%;
     height: 60px;
     margin-left: 15px;
     font-size: 25px;
+    border-radius: 4px;
 }
 
 #input-resort{
@@ -43,10 +48,16 @@
     height: 60px;
     /* padding-right: 10px; */
     font-size: 25px;
+    border-radius: 4px;
 }
 
 .save-button{
     height: 55px;
-    width: 35px;
+    width: 70px;
     align-self: top;
+    background-color: #43a047;
+    color: white;
+    display: inline-block;
+    border-radius: 8px;
+    font-size: 18px;
 }

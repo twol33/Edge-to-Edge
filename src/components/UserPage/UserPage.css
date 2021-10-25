@@ -1,3 +1,16 @@
+body{
+    background-image: url(https://secure.img1-fg.wfcdn.com/im/11330421/resize-h445%5Ecompr-r85/1302/130298963/Mountain+Mural+5+Piece+Wallpaper+Panel+Set.jpg);
+}
+
+.dashboard-header{
+    background-color: #f50057;
+    color: white;
+    text-align: center;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 4px;
+}
 
 .avatar{
     transform: scale(1.35);
