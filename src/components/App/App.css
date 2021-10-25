@@ -63,11 +63,11 @@ Button
 .btn_asLink {
   padding: 0;
   border-width: 0;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid orange;
   border-radius: 0;
   background: none;
   font: inherit;
-  color: #444;
+  color: orange;
 }
 
 .btn_asLink:hover {
@@ -103,10 +103,13 @@ Form Treatment
   margin: 0 auto 20px;
   background-color: #efefef;
   border-radius: 3px;
-  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+  padding-top: 75x;
+  margin-top: 10px;
+  /* box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4); */
 }
 
 input {
   margin: 5px;
   margin-bottom: 10px;
+  font-size: 30px;
 }

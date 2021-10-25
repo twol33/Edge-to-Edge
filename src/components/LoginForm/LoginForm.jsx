@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
+import FilterHdrIcon from '@mui/icons-material/FilterHdr';
+import './LoginForm.css';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -25,7 +27,11 @@ function LoginForm() {
   }; // end login
 
   return (
+    <div>
+    <FilterHdrIcon id='app-icon'/>
+    <h1 id='app-title'>EDGE-to-EDGE</h1>
     <form className="formPanel" onSubmit={login}>
+
       <h2>Login</h2>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
@@ -60,6 +66,7 @@ function LoginForm() {
         <input className="btn" type="submit" name="submit" value="Log In" />
       </div>
     </form>
+    </div>
   );
 }
 
