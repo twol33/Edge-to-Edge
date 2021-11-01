@@ -41,11 +41,11 @@ MN gets snow as part of its four seasons and as there is snow, there are those w
 2. Once logged in, the user will be sent to the dasboard.
 3. The dashboard will show the user's registered username at the top, a display of their current status, and buttons with assigned functions.
 4. All buttons present:
-  a. STATUS: a button that toggles whether you are out riding.
-  b. ACTIVE Riders: will navigate you to a page where it will show your community of active riders along with their location and ride style. 
-  c. MY INFO: will navigate you to a form where you can update your personal information 
-  d. RIDING LOCATION: will navigate you to a form where you will input your state and the resort you are riding at. Showing on the page will be a history of your resorts you've visited 
-  e. Ride style buttons: with designate your riding style.
+STATUS: a button that toggles whether you are out riding.
+    ACTIVE Riders: will navigate you to a page where it will show your community of active riders along with their location and ride style. 
+    MY INFO: will navigate you to a form where you can update your personal information 
+    RIDING LOCATION: will navigate you to a form where you will input your state and the resort you are riding at. Showing on the page will be a history of your resorts you've visited 
+    Ride style buttons: with designate your riding style.
 5. Once they user has input all their information, the display on the dashboard will be update. Once the user has toggles their status to true, they will appear in the active riders page with the rest of their community. 
 
 ## Acknowledgement
